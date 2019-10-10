@@ -44,7 +44,7 @@ jobs:
       - <<: *install_node_modules
       - run:
           name: Build
-          command: yarn build
+          command: yarn build-storybook
       - persist_to_workspace:
           root: ./
           paths:

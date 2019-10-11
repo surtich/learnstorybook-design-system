@@ -12,12 +12,17 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "build": "BABEL_ENV=production babel src -d dist",
+    "test": "react-scripts test --passWithNoTests",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "build-storybook-docs": "build-storybook -s public --docs"
+  },
+  "babel": {
+    "presets": [
+      "react-app"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,6 +40,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.6.4",
     "@storybook/addon-actions": "^5.2.3",
     "@storybook/addon-docs": "^5.2.3",
     "@storybook/addon-knobs": "^5.2.3",
